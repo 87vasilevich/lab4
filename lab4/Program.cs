@@ -213,6 +213,35 @@ namespace lab4
             int sum = temp.mass1.Length;
             return sum;
         }
+
+
+
+        // ПЯТОЕ ЗАДАНИЕ
+        // удаление гласных из строки
+        public static string delete_vowels(this string temp)
+        {
+            string letter = "АаУуОоЫыИиЭэЯяЮюЁёЕе";
+            for (int i = 0; i < temp.Length; i++)
+            {
+                for (int j = 0; j < letter.Length; j++)
+                {
+                    if (temp[i] == letter[j])
+                    {
+                       temp = temp.Remove(i, 1);
+                    }
+                }
+            }
+            return temp;
+        }
+
+        // удаление первых пяти элементов
+        public static int[] del_five_elements (this int [] arr)
+        {
+            
+                Array.Clear(arr, 0, 5); // удаление первых пяти элементов
+            
+            return arr;
+        }
     }
 
     ///////////////////////////////////////
@@ -299,9 +328,19 @@ namespace lab4
             Console.WriteLine($"\nСумма максимального и минимального элемента массива №1 = {number4}");
 
             number4 = StatisticOperation.Kol(one);
-            Console.WriteLine($"\nКоличество элемнтов массива №1 = {number4}");
+            Console.WriteLine($"\nКоличество элемнтов массива №1 = {number4}\n");
 
 
+            // Задание 5
+            string example = "Привет, меня зовут Владимир";
+            Console.WriteLine(example.delete_vowels()+"\n\n");
+
+            int[] examp = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            examp = examp.del_five_elements();
+            for(int i = 5; i<examp.Length;i++)
+            {
+                Console.WriteLine(examp[i]);
+            }
 
         }
     }
