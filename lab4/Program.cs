@@ -96,6 +96,45 @@ namespace lab4
             }
             return oral;
         }
+
+
+        // ЭКЗЕМПЛЯР КЛАССА OWNER
+        Owner person = new Owner(228332, "Владимир", "БГТУ");
+    }
+
+    public class Owner
+    {
+        int id;
+        string name, company;
+
+        public Owner (int id, string name, string company)
+        {
+            this.id = id;
+            this.name = name;
+            this.company = company;
+        }
+
+        //public int Id
+        //{
+        //    get { return id; }
+        //    set { id = value; }
+        //}
+        //public string Name
+        //{
+        //    get { return name; }
+        //    set { name = value; }
+        //}
+        //public string Company
+        //{
+        //    get { return Company; }
+        //    set { Company = value; }
+        //}
+
+        public override string ToString()
+        {
+            return ($"Id - {id}, Имя - {name}, организация - {company}.\n");
+        }
+
     }
 
     ///////////////////////////////////////
