@@ -99,7 +99,29 @@ namespace lab4
 
 
         // ЭКЗЕМПЛЯР КЛАССА OWNER
-        Owner person = new Owner(228332, "Владимир", "БГТУ");
+        public Owner person = new Owner(228332, "Владимир", "БГТУ");
+
+
+        // ВЛОЖЕННЫЙ КЛАСС DATE
+        public class Date
+        {
+            int day, month, year;
+
+            public Date(int day, int month, int year)
+            {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+
+            public override string ToString()
+            {
+                return ($"День - {day}, месяц - {month}, год - {year}.\n");
+            }
+
+        }
+
+        public Date xx = new Date(9, 1, 2002);
     }
 
     public class Owner
@@ -202,7 +224,15 @@ namespace lab4
             {
                 Console.WriteLine(i);
             }
-            
+
+
+            // ВТОРОЕ ЗАДАНИЕ
+            //Console.WriteLine("\n"+one.person); 
+
+
+            //
+            //Console.WriteLine("\n"+one.xx); 
+           
         }
     }
 }
