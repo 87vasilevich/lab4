@@ -8,7 +8,7 @@ namespace lab4
 {
     public class Arr
     {
-        int[] mass1;
+        public int[] mass1;
         //int[] mass2;
 
 
@@ -124,6 +124,8 @@ namespace lab4
         public Date xx = new Date(9, 1, 2002);
     }
 
+
+
     public class Owner
     {
         int id;
@@ -156,7 +158,61 @@ namespace lab4
         {
             return ($"Id - {id}, Имя - {name}, организация - {company}.\n");
         }
+    }
 
+
+
+    // ЧЕТВЁРТОЕ ЗАДАНИЕ
+    // сумма максимального и минимального эл-та массива
+    public static class StatisticOperation
+    {
+        public static int SumMaxMin(Arr temp)
+        {
+            int min, max, val;
+            min = max = temp.mass1[0];
+            for (int i = 0; i < temp.mass1.Length; i++)
+            {
+                if (temp.mass1[i] > max)
+                {
+                    max = temp.mass1[i];
+                }
+                if (temp.mass1[i] < min)
+                {
+                    min = temp.mass1[i];
+                }
+            }
+            val = max + min;
+            return val;
+        }
+
+
+        // разница максимального и минимального эл-та массива
+        public static int RazMaxMin(Arr temp)
+        {
+            int min, max, val;
+            min = max = temp.mass1[0];
+            for (int i = 0; i < temp.mass1.Length; i++)
+            {
+                if (temp.mass1[i] > max)
+                {
+                    max = temp.mass1[i];
+                }
+                if (temp.mass1[i] < min)
+                {
+                    min = temp.mass1[i];
+                }
+            }
+            val = max - min;
+            return val;
+        }
+
+
+        // подсчёт количества элементов
+        public static int Kol(Arr temp)
+        {
+            int sum = temp.mass1.Length;
+            return sum;
+        }
     }
 
     ///////////////////////////////////////
@@ -226,13 +282,27 @@ namespace lab4
             }
 
 
-            // ВТОРОЕ ЗАДАНИЕ
+            // Задание 2
             //Console.WriteLine("\n"+one.person); 
 
 
-            //
-            //Console.WriteLine("\n"+one.xx); 
-           
+            // Задание 3
+            //Console.WriteLine("\n"+one.xx);
+
+
+            // Задание 4
+            int number4;
+            number4 = StatisticOperation.RazMaxMin(one);
+            Console.WriteLine($"\nРазница между максимальным и минимальным элементом массива №1 = {number4}");
+
+            number4 = StatisticOperation.SumMaxMin(one);
+            Console.WriteLine($"\nСумма максимального и минимального элемента массива №1 = {number4}");
+
+            number4 = StatisticOperation.Kol(one);
+            Console.WriteLine($"\nКоличество элемнтов массива №1 = {number4}");
+
+
+
         }
     }
 }
